@@ -1,0 +1,22 @@
+clc;
+clear;
+close all;
+num=1;
+den=[1,5,1];
+Gs=tf(num,den);
+[A,B,C,D]=tf2ss(num,den);
+polyA=poly(A);
+rootA=roots(polyA);
+%============================
+%配置阻尼比，无阻尼振荡角频率
+wn=10;
+xi=0.707;
+p=-2*xi*wn;
+kp=wn^2;
+%============================
+P=[0,p];
+K=place(A,B,P);
+out=sim('StateSpace');
+hf=figure(1);
+plot(out.tout,out.y);
+myPlotFormat([],[],hf,[],0);

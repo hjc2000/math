@@ -1,0 +1,13 @@
+clc;
+clear;
+t=-10:0.01:10;
+x1=square(t);
+x2=0.5*(square(t,20)+1);
+subplot(1,2,1);
+%stairs(t,x1);
+plot(t,x1);
+axis([-10,10,-1.1,1.2]);
+subplot(1,2,2);
+%stairs(t,x2);
+plot(t,x2);
+axis([-10,10,-0.1,1.2]);
