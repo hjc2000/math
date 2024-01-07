@@ -5,10 +5,11 @@ function df = full_diff(f)
         df = df + diff(f,s) * sym(['d',char(s)]);
     end
 
-    % df=expand(df);
-    % for s = fsym
-    %     df=subs(df,sym(['d',char(s)])^2,0);
-    % end
+    syms(symvar(df));
+    for s = fsym
+        eq=sym(['d',char(s)])^2
+        df=subs(df,['d',char(s)]',0);
+    end
 
     df=simplify(df);
 end
