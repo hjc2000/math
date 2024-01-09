@@ -1,4 +1,0 @@
-  s5_1.c
-rt_logging_mmi.c
-rtw_modelmap_utils.c
-
