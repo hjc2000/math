@@ -1,3 +1,4 @@
+% PID 控制器类
 classdef PidController
 	properties
 		KP
@@ -8,7 +9,7 @@ classdef PidController
 	end
 	
 	methods
-		function obj = PidController(KP,KI,KD)
+		function obj = PidController(KP, KI, KD)
 			obj.KP = KP;
 			obj.KI = KI;
 			obj.KD = KD;
